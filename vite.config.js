@@ -6,7 +6,7 @@ export default defineConfig({
   base:'/webartech/',
   build: {
     rollupOptions:{
-      external: ['public/libs/*'], // specifica il file da escludere dalla build
+      external: ['public/*'], // specifica il file da escludere dalla build
     },
   },
 });
