@@ -10,5 +10,10 @@
   },
   "devDependencies": {
     "vite": "^4.3.9"
+  },
+  "dependencies": {
+    "@webarkit/ar-nft": "^0.14.5",
+    "@webarkit/arnft-threejs": "^0.4.7",
+    "mind-ar": "^1.2.3"
   }
 }
