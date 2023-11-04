@@ -1,6 +1,6 @@
 {
     "addPath": "",
-    "cameraPara": "/camera_para.dat",
+    "cameraPara": "/pages/camera_para.dat",
     "container": {
       "create": true,
       "containerName": "",

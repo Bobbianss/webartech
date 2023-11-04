@@ -13,6 +13,11 @@ function startAR() {
             container: document.body,
             imageTargetSrc: "../assets/targets/mindAR-conchiglia.mind",
             maxTrack: 30,
+            filterMinCF:0.1,
+            filterBeta: 10,
+            warmupTolerance:2,
+            missTolerance:2
+
           });
         
 
