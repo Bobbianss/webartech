@@ -48,7 +48,7 @@ var isModelReady = {
     this.aListener = listener;
   }
 } // VARIABLE WITH LISTENER DECLARATION
-const sceneGLTF = await loadGLTF("../assets/models/monkey.gltf");
+let sceneGLTF = await loadGLTF("../assets/models/monkey.gltf");
 const normalizeModel = (obj, height) => {
   // scale it according to height
   const bbox = new THREE.Box3().setFromObject(obj);
