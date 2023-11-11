@@ -3,7 +3,6 @@ import { loadAudio, loadGLTF, loadTexture } from "../libs/loader.js";
 import { MindARThree } from '../../node_modules/mind-ar/dist/mindar-image-three.prod.js';
 import * as THREE from "../../node_modules/three/build/three.module.js";
 //-----------------RESOURCES--------------------------------------
-import targetLibrary from"../assets/targets/mindAR-conchiglia.mind"
 
 document.addEventListener('DOMContentLoaded', async () => {
     startAR();
@@ -13,7 +12,7 @@ function startAR() {
     const start = async () => {
         const mindarThree = new MindARThree({
             container: document.body,
-            imageTargetSrc: targetLibrary,
+            imageTargetSrc: "../assets/targets/mindAR-conchiglia.mind",
             maxTrack: 30,
             filterMinCF:0.1,
             filterBeta: 10,
