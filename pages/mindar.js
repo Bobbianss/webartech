@@ -2,6 +2,7 @@
 import { loadAudio, loadGLTF, loadTexture } from "../libs/loader.js";
 import { MindARThree } from '../../node_modules/mind-ar/dist/mindar-image-three.prod.js';
 import * as THREE from "../../node_modules/three/build/three.module.js";
+//-----------------RESOURCES--------------------------------------
 
 document.addEventListener('DOMContentLoaded', async () => {
     startAR();
