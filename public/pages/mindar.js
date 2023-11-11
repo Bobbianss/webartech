@@ -2,6 +2,9 @@
 import { loadAudio, loadGLTF, loadTexture } from "../libs/loader.js";
 import { MindARThree } from '../../node_modules/mind-ar/dist/mindar-image-three.prod.js';
 import * as THREE from "../../node_modules/three/build/three.module.js";
+//-----------------RESOURCES--------------------------------------
+import modeToShow from "../assets/models/monkey.gltf"
+import targetLibrary from"../assets/targets/mindAR-conchiglia.mind"
 
 document.addEventListener('DOMContentLoaded', async () => {
     startAR();
@@ -11,7 +14,7 @@ function startAR() {
     const start = async () => {
         const mindarThree = new MindARThree({
             container: document.body,
-            imageTargetSrc: "../assets/targets/mindAR-conchiglia.mind",
+            imageTargetSrc: targetLibrary,
             maxTrack: 30,
             filterMinCF:0.1,
             filterBeta: 10,
@@ -24,7 +27,7 @@ function startAR() {
         const { renderer, scene, camera } = mindarThree;
         const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
         const anchor = mindarThree.addAnchor(0);
-        const gltf = await loadGLTF("../assets/models/monkey.gltf");
+        const gltf = await loadGLTF(modeToShow);
         gltf.scene.scale.set(0.3, 0.3, 0.3); // da rivedere in caso
 
         //setup anchor and gltf scene
