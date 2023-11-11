@@ -2,7 +2,6 @@ import * as THREE from "../../node_modules/three/build/three.module.js";
 import { ARButton } from "../../node_modules/three/examples/jsm/webxr/ARButton.js"
 import { loadAudio, loadGLTF, loadTexture } from "../libs/loader.js";
 
-
 document.addEventListener('DOMContentLoaded', async () => {
   startAR();
 });
@@ -49,7 +48,7 @@ var isModelReady = {
     this.aListener = listener;
   }
 } // VARIABLE WITH LISTENER DECLARATION
-const sceneGLTF = await loadGLTF("../../assets/models/monkey.gltf");
+const sceneGLTF = await loadGLTF("../assets/models/monkey.gltf");
 const normalizeModel = (obj, height) => {
   // scale it according to height
   const bbox = new THREE.Box3().setFromObject(obj);
@@ -225,64 +224,5 @@ async function loadModel(pathModel) {
   return gltf;
 }
 
-function stencilMaterialEnv(material, active) {
-  if (active) {
-    material.stencilWrite = true;
-    material.stencilRef = 1; // metti a 1
-    material.stencilFunc = THREE.EqualStencilFunc;
-  } else {
-    material.stencilWrite = true;
-    material.stencilRef = 0;
-    material.stencilFunc = THREE.EqualStencilFunc;
-  }
-
-}//[m] stencilMaterialEnv(material,active)
-
-function stenciMaterialPortal(material, active) {
-  if (active) {
-    material.stencilWrite = true; // abilito la scrittura
-    material.stencilRef = 1; //
-    material.depthWrite = false;
-    // serve per non creare arteffatti di z-index, non ci saranno effetti nel momento del cambio della z value
-    material.stencilFunc = THREE.AlwaysStencilFunc; // tutti i pixel di questa mesh sono a 1
-    material.stencilZPass = THREE.ReplaceStencilOp;
-    material.colorWrite = false
-  } else {
-
-  }
-}// [m] stenciMaterialPortal(material,active)
 
 
-function isPortalTouch(intersects){
-  intersects.forEach(portalTouched);
-
-}
-function portalTouched(item,index,arr){
-  let isTouched=false;
-  if(item.object.name=="Portal"&& item.distance<TOUCH_DISTANCE){
-    console.log("PORTALE TOCCATO");
-    isTouched=true;
-    if(isTouched && !isEnter ){
-      stencilMaterialEnv(envModelLoaded.material,false);
-      isTouched=false;
-      isEnter=true;
-    }else if(isTouched && isEnter && distanceToCenterEnv>OUT_DISTANCE){
-      stencilMaterialEnv(envModelLoaded.material,true);
-      isEnter=false;
-      isTouched=false;
-      console.log("USCITO DAL CUBO");
-    }
-  }
-}
-
-
-function updateRotationObject(camera,model){
-  const objTempPos = new THREE.Vector3();
-  objTempPos.setFromMatrixPosition(model.matrixWorld);
-  const cameraGlobalPosition = new THREE.Vector3();
-  cameraGlobalPosition.setFromMatrixPosition(camera.matrixWorld);
-  const direction = cameraGlobalPosition.sub(objTempPos).normalize();
-  // plane (x,z)
-  const angle = Math.atan2(direction.x, direction.z);
-  model.rotation.y = angle;
-}

@@ -71,7 +71,6 @@ function initAR(){
             let nftAddTJS = new ARnftThreejs.NFTaddTJS(nft.uuid);
             nftAddTJS.oef = true;
             nftAddTJS.add(model, "marker", false);
-            console.log( "STAMPAAA,",model);
             const tick = () => {
                 sceneThreejs.draw();
                 window.requestAnimationFrame(tick);
