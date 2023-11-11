@@ -1,6 +1,5 @@
-import * as THREE from "three/build/three.module.js";
-import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader.js";
-
+import {GLTFLoader} from "../../node_modules/three/examples/jsm/loaders/GLTFLoader.js";
+import * as THREE from "../../node_modules/three/build/three.module.js";
 
 let width = 640;
 let height = 480;
@@ -72,7 +71,6 @@ function initAR(){
             let nftAddTJS = new ARnftThreejs.NFTaddTJS(nft.uuid);
             nftAddTJS.oef = true;
             nftAddTJS.add(model, "marker", false);
-            console.log( "STAMPAAA,",model);
             const tick = () => {
                 sceneThreejs.draw();
                 window.requestAnimationFrame(tick);
