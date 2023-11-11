@@ -1,5 +1,6 @@
-import {GLTFLoader} from "three/examples/jsm//loaders/GLTFLoader.js";
 import * as THREE from "three/build/three.module.js";
+import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader.js";
+
 
 let width = 640;
 let height = 480;
