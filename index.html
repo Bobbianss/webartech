@@ -6,15 +6,19 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-
+    <script type="module" src="./main.js"></script>
   </head>
   <body>
     <div id="app"></div>
     <h1>Pagina principale</h1>
-    <script type="module" src="./main.js"></script>
-    <button onclick="navigateTo('pages/arjs.html')">ARJS 1</button>
-    <button onclick="navigateTo('pages/arnft.html')">ARNFT 2</button>
-    <button onclick="navigateTo('pages/mindar.html')">MINDAR 3</button>
+    
+    <button onclick="navigateTo('pages/arjs/arjs.html')">ARJS 1</button>
+    <button onclick="navigateTo('pages/arnft/arnft.html')">ARNFT 2</button>
+    <button onclick="navigateTo('pages/mindar/mindar.html')">MINDAR 3</button>
+    <button onClick="navigateTo('pages/googlear/googlear.html')">GOOGLE AR</button>
+    <button onClick="navigateTo('pages/webxr/webxr.html')">WEB XR</button>
+
+   
   
     <script>
       function navigateTo(page) {

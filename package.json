@@ -6,14 +6,17 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "host": "vite --host"
   },
   "devDependencies": {
-    "vite": "^4.3.9"
+    "vite": "^4.3.9",
+    "vite-plugin-inspect": "^0.7.42"
   },
   "dependencies": {
     "@webarkit/ar-nft": "^0.14.5",
     "@webarkit/arnft-threejs": "^0.4.7",
-    "mind-ar": "^1.2.3"
+    "mind-ar": "^1.2.3",
+    "page.js": "^4.13.3"
   }
 }
