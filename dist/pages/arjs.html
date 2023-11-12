@@ -3,7 +3,6 @@
   <head>
     <script data-consolejs-channel="b1b0f3b6-294d-d7bf-903e-d887c26d3b27" src="https://remotejs.com/agent/agent.js"></script>
     <title>AR.js - Image Tracking</title>
-    <script data-consolejs-channel="6224aebd-771b-8a1b-1968-249eefb54735" src="https://remotejs.com/agent/agent.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1.3.0/dist/aframe-master.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     
@@ -56,7 +55,7 @@
       <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
       <a-nft
         type="nft"
-        url="/assets/targets/arjs/marker"
+        url="../webartech/assets/targets/arjs/marker"
         smooth="true"
         smoothCount="10"
         smoothTolerance=".01"
@@ -64,7 +63,7 @@
       >
         <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
         <a-entity
-          gltf-model="/assets/models/monkey.gltf"
+          gltf-model="../assets/models/monkey.gltf"
           scale="300 300 300"
           rotation="-90 0 0"
           position=" 220 50 -180" 
