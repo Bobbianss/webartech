@@ -1,0 +1,1 @@
+html,body{position:relative;margin:0;width:100%;height:100%;overflow:hidden}#item-buttons,#confirm-buttons{position:absolute;top:50px;z-index:2;display:flex;flex-direction:row;display:none}.button-image{width:50px;height:50px;object-fit:cover;margin:5px}.button{width:50px;height:50px;margin:5px}
