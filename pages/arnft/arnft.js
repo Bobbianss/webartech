@@ -1,3 +1,4 @@
+const baseUrl = import.meta.env.VITE_BASE_URL;
 import * as THREE from "three";
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader.js";
 let width = 640;
@@ -5,9 +6,7 @@ let height = 480;
 let model;
 const gltfLoader = new GLTFLoader();
 // Load a glTF resource
-gltfLoader.load(
-	// resource URL
-	'/assets/models/monkey.gltf',
+gltfLoader.load('${baseUrl}assets/models/monkey.gltf',
 	// called when the resource is loaded
 	function ( gltf ) {
         model=gltf.scene;
@@ -29,7 +28,7 @@ gltfLoader.load(
 	}//../libs/ARnft-0.14.5/examples/DataNFT/pinball
 );
 function initAR(){
-    ARnft.ARnft.init(width, height, [['/assets/targets/arjs/marker']], [['marker']], '/assets/configurations/config.json', true)
+    ARnft.ARnft.init(width, height, [['${baseUrl}assets/targets/arjs/marker']], [['marker']], '${baseUrl}assets/configurations/config.json', true)
     .then((nft) => {
         document.addEventListener('containerEvent', function (ev) {
 
