@@ -1,12 +1,10 @@
 import * as THREE from "three";
 import { ARButton } from "three/examples/jsm/webxr/ARButton.js"
 import { loadAudio, loadGLTF, loadTexture } from "../../public/libs/loader.js";
-
+const MODEL_GLTF = new URL('../../public/assets/models/monkey.gltf', import.meta.url).href;
 document.addEventListener('DOMContentLoaded', async () => {
   startAR();
 });
-
-const MODEL_GLTF="/assets/models/monkey.gltf"
 
 var portalModelLoaded, envModelLoaded;
 var bBoxEnv, bBoxPortal;
