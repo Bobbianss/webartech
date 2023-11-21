@@ -1,97 +1,93 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.page-header {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #333;
   text-align: center;
+  margin: 40px 0 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+.category-header {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #555;
+  text-align: center;
+  margin: 30px 0 15px;
 }
 
-.card {
-  padding: 2em;
+.full-height {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.read-the-docs {
-  color: #888;
+.button-container {
+  width: 100%;
+  max-width: 400px;
+  /* Adjust the max width as needed */
 }
 
-button {
-  border-radius: 8px;
+.btn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn-custom {
+  width: auto;
+  /* O una larghezza specifica, es. 200px */
+  min-width: 150px;
+  /* Imposta una larghezza minima */
+  margin: 5px;
+  /* Aggiungi un po' di spazio attorno ai bottoni */
+}
+
+.alert-message {
+  color: #856404;
+  /* colore del testo */
+  background-color: #fff3cd;
+  /* colore di sfondo */
+  border-color: #ffeeba;
+  /* colore del bordo */
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.btn-custom {
+  margin-bottom: 10px;
+  /* Spazio tra i bottoni */
+}
+
+.modal-image {
+  max-width: 100%;
+  /* Assicurati che l'immagine si adatti alla finestra modale */
+  height: auto;
+}
+
+.marker-based-btn {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.content-align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.separator {
+  border-top: 1px solid #ddd;
+  margin: 10px 0;
+}
+.world-anchored-btn{
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
 }

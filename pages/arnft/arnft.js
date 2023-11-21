@@ -30,7 +30,7 @@ gltfLoader.load(modelPath,
 	}//../libs/ARnft-0.14.5/examples/DataNFT/pinball
 );
 function initAR(){
-    ARnft.ARnft.init(width, height,[['webartech/assets/targets/arjs/marker']], [['marker']], configPath, true)
+    ARnft.ARnft.init(width, height,[['webartech/assets/targets/arnft/marker']], [['marker']], configPath, true)
     .then((nft) => {
         document.addEventListener('containerEvent', function (ev) {
 
@@ -78,11 +78,9 @@ function initAR(){
             tick();
         })
     }).catch((error) => {
-        console.log(error);
+        console.log("BOBBO)",error);
     });
 }
 
 
-document.addEventListener('onInitThreejsRendering', (ev) => {
-    console.log('onInitThreejsRendering is available only outside containerEvent!');
-});
+

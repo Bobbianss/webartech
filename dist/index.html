@@ -1,31 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
 
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/webartech/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    
-    <script type="module" crossorigin src="/webartech/assets/googlear-3cfb730f.js"></script>
-    <link rel="stylesheet" href="/webartech/assets/index-48a8825f.css">
-  </head>
-  <body>
-    <div id="app"></div>
-    <h1>Pagina principale</h1>
-    
-    <button onclick="navigateTo('pages/arjs/arjs.html')">ARJS 1</button>
-    <button onclick="navigateTo('pages/arnft/arnft.html')">ARNFT 2</button>
-    <button onclick="navigateTo('pages/mindar/mindar.html')">MINDAR 3</button>
-    <button onClick="navigateTo('pages/googlear/googlear.html')">GOOGLE AR</button>
-    <button onClick="navigateTo('pages/webxr/webxr.html')">WEB XR</button>
-
-   
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/webartech/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
   
-    <script>
-      function navigateTo(page) {
-        window.location.href = page;
-      }
+  <script type="module" crossorigin src="/webartech/assets/googlear-3cfb730f.js"></script>
+  <link rel="stylesheet" href="/webartech/assets/index-b9cc920e.css">
+</head>
+
+<body>
+  <div class="container full-height">
+    <div class="page-header">Augmented Reality</div>
+    <p class="alert-message">
+      Per sperimentare le funzionalità delle librerie AR basate su marker, è necessario scaricare il marker specifico.
+      Puoi stamparlo su carta o visualizzarlo su un secondo schermo, come quello di un altro dispositivo, per procedere
+      con il test.
+    </p>
+    <div class="category-header">AR Image Tracking</div>
+    <div class="marker-based-btn content-align">
+      <!-- ARJS -->
+      <button class="btn btn-primary btn-custom" onclick="navigateTo('pages/arjs/arjs.html')">ARjs-START</button>
+      <a href="assets/img/arjs-target-image.jpg" download class="btn btn-outline-primary btn-custom">Download Target</a>
+      <button class="btn btn-outline-primary btn-custom"
+        onclick="showMarkerModal('assets/img/arjs-target-image.jpg')">View Target</button>
+    </div>
+    <div class="marker-based-btn content-align">
+      <!-- ARNFT -->
+      <button class="btn btn-secondary btn-custom" onclick="navigateTo('pages/arnft/arnft.html')">ARnft-START</button>
+      <a href="assets/img/arnft-target-image.jpg" download class="btn btn-outline-secondary btn-custom">Download
+        Target</a>
+      <button class="btn btn-outline-secondary btn-custom"
+        onclick="showMarkerModal('assets/img/arnft-target-image.jpg')">View Target</button>
+    </div>
+    <div class="marker-based-btn content-align">
+      <!-- MINDAR -->
+      <button class="btn btn-success btn-custom" onclick="navigateTo('pages/mindar/mindar.html')">MindAR-START</button>
+      <a href="assets/img/mindar-target-image.jpg" download class="btn btn-outline-success btn-custom">Download
+        Target</a>
+      <button class="btn btn-outline-success btn-custom"
+        onclick="showMarkerModal('assets/img/mindar-target-image.jpg')">View Target</button>
+    </div>
+    <!-- ... World Anchored ... -->
+    <div class="category-header">World Anchored</div>
+    <div class="world-anchored-btn ">
+      <button class="btn btn-info btn-custom"
+        onclick="navigateTo('pages/googlear/googlear.html')">GoogleAR-START</button>
+      <button class="btn btn-warning btn-custom" onclick="navigateTo('pages/webxr/webxr.html')">WebXR-START</button>
+    </div>
+  </div>
+
+  <!-- Finestra Modale per il Marker -->
+  <div class="modal fade" id="markerModal" tabindex="-1" aria-labelledby="markerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="markerModalLabel">Marker AR</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img id="markerImage" src="" alt="AR Marker" class="modal-image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function navigateTo(page) {
+      window.location.href = page;
+    }
+
+    function showMarkerModal(imageSrc) {
+      document.getElementById('markerImage').src = imageSrc;
+      var markerModal = new bootstrap.Modal(document.getElementById('markerModal'));
+      markerModal.show();
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-  </body>
+</body>
+
 </html>
