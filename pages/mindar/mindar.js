@@ -7,6 +7,7 @@ const modelPath = new URL('../../public/assets/models/monkey.gltf', import.meta.
 const targetPath= new URL('../../public/assets/targets/mindAR-conchiglia.mind', import.meta.url).href;
 document.addEventListener('DOMContentLoaded', async () => {
     startAR();
+    document.getElementById('loadingOverlay').style.display = 'none';
 });
 function startAR() {
 
