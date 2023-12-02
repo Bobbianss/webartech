@@ -1,20 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
 
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/webartech/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Google AR Engine</title>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+<head>
 
-    <script type="module" crossorigin src="/webartech/assets/googlear-3cfb730f.js"></script>
-  </head>
-  <body>
-    <model-viewer ar camera-controls touch-action="pan-y" src="../../assets/models/monkey.gltf" alt="A 3D model of an astronaut">
-        <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
-            👋 Activate AR
-        </button>
-      </model-viewer>
-  </body>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/webartech/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google AR Engine</title>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+  
+  <script type="module" crossorigin src="/webartech/assets/modulepreload-polyfill-3cfb730f.js"></script>
+  <link rel="stylesheet" href="/webartech/assets/googlear-0f9fe1bb.css">
+</head>
+
+<body>
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="loader">Loading,please wait...</div>
+  </div>
+  <model-viewer ar camera-controls touch-action="pan-y" src="../../assets/models/monkey.gltf"
+    alt="A 3D model of an astronaut">
+    <button slot="ar-button"
+      style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+      start
+    </button>
+  </model-viewer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+            const arButton = document.querySelector('button[slot="ar-button"]');
+            if (arButton) {
+                arButton.click();
+                setTimeout(function() {
+                    document.getElementById('loadingOverlay').style.display = 'none';
+                }, 400); // Regola questo timeout in base al tempo di caricamento previsto
+            } else {
+                // Nascondi l'overlay anche se il bottone non viene trovato
+             //   document.getElementById('loadingOverlay').style.display = 'none';
+            }
+        }, 400); // Tempo di attesa prima di effettuare il clic
+    });
+</script>
+
+
+</body>
+
 </html>
