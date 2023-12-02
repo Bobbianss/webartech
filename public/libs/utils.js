@@ -14,7 +14,6 @@
  */
 
 window.gltfLoader = new THREE.GLTFLoader();
-const modelPath = new URL('../assets/models/monkey.gltf', import.meta.url).href;
 /**
  * The Reticle class creates an object that repeatedly calls
  * `xrSession.requestHitTest()` to render a ring along a found
@@ -23,7 +22,6 @@ const modelPath = new URL('../assets/models/monkey.gltf', import.meta.url).href;
 class Reticle extends THREE.Object3D {
   constructor() {
     super();
-
     this.loader = new THREE.GLTFLoader();
     this.loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", (gltf) => {
       this.add(gltf.scene);
@@ -33,7 +31,7 @@ class Reticle extends THREE.Object3D {
   }
 }
 
-window.gltfLoader.load(modelPath, function(gltf) {
+window.gltfLoader.load('/assets/models/monkey.gltf', function(gltf) {
   const flower = gltf.scene
   flower.castShadow = true;
   window.sunflower = gltf.scene;

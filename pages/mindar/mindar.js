@@ -28,7 +28,7 @@ function startAR() {
         const light = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
         const anchor = mindarThree.addAnchor(0);
         const gltf = await loadGLTF(modelPath);
-        gltf.scene.scale.set(0.3, 0.3, 0.3); // da rivedere in caso
+        gltf.scene.scale.set(0.8, 0.8, 0.8); // da rivedere in caso
 
         //setup anchor and gltf scene
         anchor.group.add(gltf.scene);

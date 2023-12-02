@@ -216,7 +216,7 @@ class App {
 
     this.resetButton.addEventListener('click', (e) => {
       e.stopPropagation();
-      console.log("CLICK");
+      //console.log("CLICK");
       this.restartScene(false,"",this.reticle);
     });
     
@@ -224,17 +224,17 @@ class App {
 
 
   restartScene(viewMode, scene, reticle) {
-    console.log('restartScene called with viewMode:', viewMode);
+    //console.log('restartScene called with viewMode:', viewMode);
     if (viewMode == true) {
       this.resetButton.style.display = 'block';
       isOnPose=true;
       reticle.visible=false;
-      console.log('Button should be visible');
+    //  console.log('Button should be visible');
     } else {
       this.resetButton.style.display = 'none';
       isOnPose=false;
       this.removeSunflowerClone();
-      console.log('Button should be hidden');
+     // console.log('Button should be hidden');
     }
   }
   
